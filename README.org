@@ -7,4 +7,4 @@ A selection of Coq files for small projects I have done. Any large projects will
 * Projects
 
 ** Circles.v
-A project with the main goal of showing that two different definitions of $S^1$ are equal in HoTT. The secondary goal was to help get familiar with using higher inductive types. 
+A project with the main goal of showing that two different definitions of $S^1$ are equal in HoTT. The secondary goal was to get familiar with using higher inductive types. 
