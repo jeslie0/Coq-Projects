@@ -1,5 +1,5 @@
 Require Import HoTT.
-
+(*Most of these definitions and lemmas are redundant.  The goal is to reformulate this using built in commands.*)
 Definition homotopy {A B : Type} (f g : A -> B) : Type := forall x : A, f x = g x.
 Definition isEquiv {A B : Type} (f : A -> B): Type := exists (g : B -> A), (homotopy (g o f) (idmap)) /\ (homotopy (idmap) (f o g)).
 Definition Equiv (A B : Type) : Type := exists (f : A -> B), isEquiv f.
