@@ -10,3 +10,13 @@ A selection of Coq files for small projects I have done. Any large projects will
 A project with the main goal of showing that two different definitions of $S^1$ are equal in HoTT. The secondary goal was to get familiar with using higher inductive types.
 
 The main file is [[file:Circles/circles.v][circles.v]].
+
+* Finished projects
+
+** HoTT-Learning-Seminar
+
+*** Presentation 1
+A first presentation on using Coq.
+
+*** Presentation 2
+A second presentation on using Coq.
