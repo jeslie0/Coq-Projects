@@ -1,9 +1,12 @@
 Require Import HoTT.
-(*Most of these definitions and lemmas are redundant.  The goal is to reformulate this using built in commands.*)
+Open Scope type_scope.
+(*Most of these definitions and lemmas are redundant.  The goal is to reformulate this using built in commands.
+
+ The induction principles need to be ammended to reflect the points made in the HoTT Library's STYLE.md file, Higher Inductive Types, 4. This is only necessary for the circle' induction type.*)
 Definition homotopy {A B : Type} (f g : A -> B) : Type := forall x : A, f x = g x.
-Definition isEquiv {A B : Type} (f : A -> B): Type := exists (g : B -> A), (homotopy (g o f) (idmap)) /\ (homotopy (idmap) (f o g)).
+Definition isEquiv {A B : Type} (f : A -> B): Type := exists (g : B -> A), (homotopy (g o f) (idmap)) * (homotopy (idmap) (f o g)).
 Definition Equiv (A B : Type) : Type := exists (f : A -> B), isEquiv f.
-Axiom Univalence : forall (A B : Type), Equiv (Equiv A B) (A = B).
+Axiom Univalence' : forall (A B : Type), Equiv (Equiv A B) (A = B).
 
 Module Export Circle.
   Private Inductive circle : Type := base : circle.
@@ -219,7 +222,15 @@ Defined.
 
 Theorem circles_are_equal : circle = circle'.
 Proof.
-  apply Univalence.
+  apply Univalence'.
   exists f.
   exact f_isEquiv.
+Defined.
+
+Theorem circles_are_equal' `{Univalence} : circle = circle'.
+Proof.
+  apply equiv_path_universe.
+  apply (equiv_adjointify f g).
+  + exact lem12.
+  + exact lem14.
 Defined.
