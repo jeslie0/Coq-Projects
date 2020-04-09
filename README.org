@@ -1,0 +1,10 @@
+#+title: Coq-Projects
+#+description: A README file for the Coq-Projects repository
+#+author: James Leslie
+
+A selection of Coq files for small projects I have done. Any large projects will be stored under their own repo.
+
+* Projects
+
+** Circles.v
+A project with the main goal of showing that two different definitions of $S^1$ are equal in HoTT. The secondary goal was to help get familiar with using higher inductive types. 
